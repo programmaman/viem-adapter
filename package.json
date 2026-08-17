@@ -1,0 +1,58 @@
+{
+  "name": "@rakelabs/viem-adapter",
+  "version": "0.1.0",
+  "description": "Viem integration adapter for Rakelabs SDKs",
+  "keywords": ["ethereum", "viem", "abi", "rpc", "adapter"],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/programmaman/viem-adapter.git"
+  },
+  "homepage": "https://github.com/programmaman/viem-adapter#readme",
+  "bugs": {
+    "url": "https://github.com/programmaman/viem-adapter/issues"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "npm run clean && tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test",
+    "prepack": "npm run build",
+    "pack:check": "npm pack --dry-run",
+    "test": "npm run build && tsc -p tsconfig.test.json && node --test dist-test/test/*.test.js"
+  },
+  "peerDependencies": {
+    "viem": ">=2.0.0 <3.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.0.0",
+    "eslint": "^10.5.0",
+    "tsx": "^4.22.3",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.61.1",
+    "viem": "^2.39.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist/src",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ]
+}
