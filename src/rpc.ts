@@ -1,10 +1,8 @@
 import type { PublicClient } from 'viem';
 import type {
     BlockInfo,
-    CallRequest,
     EvmLog,
     Hex,
-    LogFilter,
     ReadBlockReference,
     RpcClient,
 } from './types.js';
